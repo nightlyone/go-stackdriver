@@ -1,0 +1,70 @@
+go-stackdriver
+==============
+
+Inofficial Go client for [stackdriver.com](stackdriver.com) API.
+
+NOTE: Still work in progress, just a proof of concept, code heavily in flux. No tests and docs yet!
+
+[![Build Status][1]][2]
+
+[1]: https://secure.travis-ci.org/nightlyone/go-stackdriver.png
+[2]: http://travis-ci.org/nightlyone/go-stackdriver
+
+
+LICENSE
+-------
+BSD
+
+documentation
+-------------
+package documentation at [go.pkgdoc.org](http://go.pkgdoc.org/github.com/nightlyone/go-stackdriver/stackdriver)
+or [gowalker.org](http://gowalker.org/github.com/nightlyone/go-stackdriver/stackdriver)
+
+
+quick usage
+-----------
+see the example.go for usage.
+
+build and install
+=================
+
+install from source
+-------------------
+
+Install [Go 1][3], either [from source][4] or [with a prepackaged binary][5].
+
+Then run
+
+	go get github.com/nightlyone/go-stackdriver/stackdriver
+
+
+Export your stackdriver API key as `STACKDRIVER_API_KEY` environment variable
+
+Run the example:
+
+    go run example.go
+
+
+[3]: http://golang.org
+[4]: http://golang.org/doc/install/source
+[5]: http://golang.org/doc/install
+
+LICENSE
+-------
+BSD
+
+documentation
+-------------
+
+contributing
+============
+
+Contributions are welcome. Please open an issue or send me a pull request for a dedicated branch.
+Make sure the git commit hooks show it works.
+
+git commit hooks
+-----------------------
+enable commit hooks via
+
+        cd .git ; rm -rf hooks; ln -s ../git-hooks hooks ; cd ..
+
