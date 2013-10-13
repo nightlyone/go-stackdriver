@@ -1,7 +1,7 @@
 go-stackdriver
 ==============
 
-Inofficial Go client for [stackdriver.com](stackdriver.com) API.
+Inofficial Go client for [stackdriver.com](http://stackdriver.com) API.
 
 NOTE: Still work in progress, just a proof of concept, code heavily in flux. No tests and docs yet!
 
