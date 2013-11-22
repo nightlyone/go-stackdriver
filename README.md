@@ -17,9 +17,12 @@ BSD
 
 documentation
 -------------
-package documentation at [go.pkgdoc.org](http://go.pkgdoc.org/github.com/nightlyone/go-stackdriver/stackdriver)
-or [gowalker.org](http://gowalker.org/github.com/nightlyone/go-stackdriver/stackdriver)
+package documentation at [![GoDoc][3]][4]
+or [gowalker.org][5]
 
+[3]: https://godoc.org/github.com/nightlyone/go-stackdriver/stackdriver?status.png
+[4]: https://godoc.org/github.com/nightlyone/go-stackdriver/stackdriver
+[5]: http://gowalker.org/github.com/nightlyone/go-stackdriver/stackdriver
 
 quick usage
 -----------
@@ -31,7 +34,7 @@ build and install
 install from source
 -------------------
 
-Install [Go 1][3], either [from source][4] or [with a prepackaged binary][5].
+Install [Go 1][6], either [from source][7] or [with a prepackaged binary][8].
 
 Then run
 
@@ -45,9 +48,9 @@ Run the example:
     go run example.go
 
 
-[3]: http://golang.org
-[4]: http://golang.org/doc/install/source
-[5]: http://golang.org/doc/install
+[6]: http://golang.org
+[7]: http://golang.org/doc/install/source
+[8]: http://golang.org/doc/install
 
 LICENSE
 -------
