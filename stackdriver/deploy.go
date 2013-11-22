@@ -1,5 +1,6 @@
 package stackdriver
 
+// A deploy of some code
 type Deploy struct {
 	RevisionId string `json:"revision_id"`
 	DeployedBy string `json:"deployed_by,omitempty"`
