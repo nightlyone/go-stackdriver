@@ -1,6 +1,6 @@
 package stackdriver
 
-// an Annotion made by someone
+// an Annotation made by someone
 type Annotation struct {
 	Message     string `json:"message"`
 	AnnotatedBy string `json:"annotated_by,omitempty"`
