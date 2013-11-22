@@ -1,17 +1,18 @@
 package stackdriver
 
-// A custom metric to be sent to custom metric endpoint
+// The Metrics defined by you and to be sent to custom metric endpoint
 type Metrics struct {
 	Timestamp    int64       `json:"timestamp"`
 	ProtoVersion int         `json:"proto_version"`
 	Data         []Datapoint `json:"data"`
 }
 
+// Submit the metrics to stackdriver.com
 func (m *Metrics) Submit() error {
 	return submit(m)
 }
 
-// A datapoint of a custom metric
+// A Datapoint of a Metric
 type Datapoint struct {
 	Name        string  `json:"name"`
 	Value       float64 `json:"value"`

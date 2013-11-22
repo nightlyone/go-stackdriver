@@ -10,15 +10,15 @@ import (
 )
 
 // Stackdriver API endpoint.
-var ApiEndpoint = "https://custom-gateway.stackdriver.com/v1"
+var APIEndpoint = "https://custom-gateway.stackdriver.com/v1"
 
 // Your API, generated in the Stackdriver console.
-var ApiKey = os.ExpandEnv("${STACKDRIVER_API_KEY}")
+var APIKey = os.ExpandEnv("${STACKDRIVER_API_KEY}")
 
-// If we don't get a positive HTTP code, this is is the error returned with details about the request and the received HTTP status code
+// SubmissionError is repoerted, if we don't get a positive HTTP code.
 type SubmissionError struct {
-	Request    *http.Request
-	StatusCode int
+	Request    *http.Request // Request leading to the error
+	StatusCode int           // StatusCode from HTTP layer indicating the error
 }
 
 // Pretty print error
@@ -27,7 +27,7 @@ func (e *SubmissionError) Error() string {
 }
 
 // Reported on missing api key
-var ErrApiKeyMissing = errors.New("Stackdriver ApiKey missing. STACKDRIVER_API_KEY environment variable not set?")
+var ErrAPIKeyMissing = errors.New("stackdriver APIKey missing. STACKDRIVER_API_KEY environment variable not set?")
 
 // Submit implements common submission logic for Metric, Deploy and Annotation types.
 func submit(data interface{}) (err error) {
@@ -43,8 +43,8 @@ func submit(data interface{}) (err error) {
 		panic(fmt.Sprintf("Don't know how to submit %T", data))
 	}
 
-	if ApiKey == "" {
-		return ErrApiKeyMissing
+	if APIKey == "" {
+		return ErrAPIKeyMissing
 	}
 
 	message, err := json.Marshal(data)
@@ -53,9 +53,9 @@ func submit(data interface{}) (err error) {
 	}
 
 	body := bytes.NewReader(message)
-	req, err := http.NewRequest("POST", ApiEndpoint+"/"+api, body)
+	req, err := http.NewRequest("POST", APIEndpoint+"/"+api, body)
 	req.Header.Add("Content-Type", "application/json")
-	req.Header.Add("X-Stackdriver-Apikey", ApiKey)
+	req.Header.Add("X-Stackdriver-Apikey", APIKey)
 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
