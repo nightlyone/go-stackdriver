@@ -7,3 +7,7 @@ type Deploy struct {
 	DeployedTo string `json:"deployed_to,omitempty"`
 	Repository string `json:"repository,omitempty"`
 }
+
+func (d *Deploy) Submit() error {
+	return submit(d)
+}

@@ -7,6 +7,10 @@ type Metrics struct {
 	Data         []Datapoint `json:"data"`
 }
 
+func (m *Metrics) Submit() error {
+	return submit(m)
+}
+
 // A datapoint of a custom metric
 type Datapoint struct {
 	Name        string  `json:"name"`

@@ -30,7 +30,7 @@ func (e *SubmissionError) Error() string {
 var ErrApiKeyMissing = errors.New("Stackdriver ApiKey missing. STACKDRIVER_API_KEY environment variable not set?")
 
 // Submit implements common submission logic for Metric, Deploy and Annotation types.
-func Submit(data interface{}) (err error) {
+func submit(data interface{}) (err error) {
 	var api string
 	switch data.(type) {
 	case *Metrics, Metrics:

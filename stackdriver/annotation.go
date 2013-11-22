@@ -8,3 +8,7 @@ type Annotation struct {
 	IntanceId   string `json:"instance_id,omitempty"`
 	EventEpoch  int64  `json:"event_epoch,omitempty"`
 }
+
+func (a *Annotation) Submit() error {
+	return submit(a)
+}
