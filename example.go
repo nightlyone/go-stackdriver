@@ -20,7 +20,7 @@ func main() {
 		},
 	}
 
-	if err := stackdriver.Submit(query); err != nil {
+	if err := query.Submit(); err != nil {
 		log.Fatalln(err)
 	}
 	log.Println("sent", query, "to apiendpoint")
@@ -30,7 +30,7 @@ func main() {
 		DeployedTo: "production",
 		Repository: "example_repo",
 	}
-	if err := stackdriver.Submit(deploy); err != nil {
+	if err := deploy.Submit(); err != nil {
 		log.Fatalln(err)
 	}
 	log.Println("sent", deploy, "to apiendpoint")
@@ -39,7 +39,7 @@ func main() {
 		AnnotatedBy: "devops",
 		Level:       "INFO",
 	}
-	if err := stackdriver.Submit(annotate); err != nil {
+	if err := annotate.Submit(); err != nil {
 		log.Fatalln(err)
 	}
 	log.Println("sent", annotate, "to apiendpoint")
